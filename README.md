@@ -31,7 +31,7 @@ São Apenas conceitos
 A transferencia de dados é feita de uma maneira **simbólica**, **figurativa**, **representativa**, de maneira didática.
 A transferencia de dados é geralmente usando protocolo **HTTP**.
 
-**Resource:** É a abstração sobre um determinado tipo de informação que uma aplicação gerencia, para que se aplique ao padrão REST __cada recurso precisa ter uma identificação única__ exemplo: __https://URI/RESOURCE_NAME/INFO__
+**Resource:** É a abstração sobre um determinado tipo de informação que uma aplicação gerencia, para que se aplique ao padrão REST __cada recurso precisa ter uma identificação única__ exemplo: __http://URI/RESOURCE_NAME/INFO__
 
 ### 1.4 - RESTFul
 É a aplicação de todos os padrões REST na API.
@@ -63,15 +63,15 @@ Existem diversos porém os mais utilizados são:
 ### 1.10 Status das respostas
 - 1xx: Informação
 - 2xx: Sucesso
-    200: OK
-    201: CREATED
-    204: Não tem conteudo PUT POST DELETE
+    - 200: OK
+    - 201: CREATED
+    - 204: Não tem conteudo PUT POST DELETE
 - 3xx: Redirection
 - 4xx: Client Error
-    400: Bad Request
-    404: Not Fund:
+    - 400: Bad Request
+    - 404: Not Fund:
 - 5xx: Server Error
-    500: Internal Server Error
+    - 500: Internal Server Error
 
 ## 2 - ESLINT  
 Comandos úteis:
@@ -88,7 +88,7 @@ Existem diversas maneiras de fazer o deploy de uma aplicação para o AZURE vou 
 - Deploy via GIT, VSCode ou CLI: 
     - Ao realizar o deploy por alguns destes modelos o AZURE vai buscar pelos arquivos de iniciailização do projeto: app.js, server.js ou comando no package.json na raiz do projeto.
 - É obrigatório o uso do .gitignore;
-- No arquivo de inicialização: Não configurar o HOST e manter a porta como: process.env.PORT || [portalocal]
+- No arquivo de inicialização: Manter o host como automático ou remove-lo da configuração e manter a porta como: process.env.PORT || [LOCAL_PORT]
 - O arquivo process.json faz parte da orquestracao do PM2 e pode ser opcional.
 
 ## 5 - Links 
