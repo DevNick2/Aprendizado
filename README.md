@@ -5,47 +5,45 @@
 > O que me motivou a criar este documento foi justamente encontrar a resposta para diversos problemas que eu tive ao longo do trajeto, espalhados pela web, assim decidi criar um documento registrando minha jornada.
 
 ## Sumario 
-1. [API](#api)
-2. [ESLINT](#eslint)
-3. [Azure](#azure)
-4. [Readme.md](#readme)
-5. [GIT](#git)
-6. [Javascript](#javascript)
-7. [PHP](#php)
-8. [NodeJS](#nodejs)
-9. [React](#react)
-10. [React Native](#react-native)
-11. HTML5
-12. CSS3
-13. SASS
-14. Programação Funcional
-15. Pattern Strategy
-16. Pattern MVC
-17. Pattern Factory
-18. Pattern Sigleton
-19. Atomic Design
-20. Webpack
-21. Axios
-22. JWT
-23. DevOps
-24. Gulp
-25. PM2
-26. Mysql
-27. Postgree
-28. MongoDB
-29. Mongoose
-30. Sequelize
-31. Arquitetura de Software
-32. Modelagem de Dados
-33. SWAGGER
-34. HAPI
-35. Express
-36. Angular
-37. JSPOO
-38. Joi
-39. BoomJs
-40. CORS
-41. Links
+1. [API](#1---api)
+2. [ESLINT](#2---eslint)
+3. [Azure](#3---azure)
+4. [Readme.md (Em breve)]
+5. [GIT (Em breve)]
+6. [Javascript (Em breve)]
+7. [PHP (Em breve)]
+8. [NodeJS (Em breve)]
+9. [React (Em breve)]
+10. [React Native (Em breve)]
+11. [HTML5 (Em breve)]
+12. [CSS3 (Em breve)]
+13. [SASS (Em breve)]
+14. [Programação Funcional (Em breve)]
+15. [Pattern Strategy (Em breve)]
+16. [Pattern MVC (Em breve)]
+17. [Pattern Factory (Em breve)]
+18. [Pattern Sigleton (Em breve)]
+19. [Atomic Design (Em breve)]
+20. [Webpack (Em breve)]
+21. [Axios (Em breve)]
+22. [JWT (Em breve)]
+23. [DevOps (Em breve)]
+24. [Gulp (Em breve)]
+25. [PM2 (Em breve)]
+26. [Mysql (Em breve)]
+27. [Postgree (Em breve)]
+28. [MongoDB (Em breve)]
+29. [Mongoose (Em breve)]
+30. [Sequelize (Em breve)]
+33. [SWAGGER (Em breve)]
+34. [HAPI (Em breve)]
+35. [Express (Em breve)]
+36. [Angular (Em breve)]
+37. [JSPOO (Em breve)]
+38. [Joi (Em breve)]
+39. [BoomJs (Em breve)]
+40. [CORS (Em breve)]
+41. [Links (Em breve)]
 
 ## 1 - API 
 É um conjunto de rotinas e padrões de programação para acesso a um aplicativo baseado na Web.
