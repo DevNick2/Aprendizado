@@ -1,12 +1,16 @@
 # Aprendizado
 > Este projeto é uma documentação do meu trajeto de aprendizado no mundo do desenvolvimento, abaixo está disponível todas as informações que pesquisei, estudei e testei ao longo de minha jornada no mundo da programação.
+>
 > Como foram muitos conteúdos lidos, resumidos e testados podem haver divergências nos conteúdos aqui descritos com o que talvez você conheça, assim peço a gentileza de me enviar sugestões de correções ou adição de conteúdo e texto.
+>
 > O objetivo deste projeto é poder ajudar outras pessoas que também estão no mundo da programação e precisam de algo um pouco mais detalhado e objetivo.
+>
 > O que me motivou a criar este documento foi justamente encontrar a resposta para diversos problemas que eu tive ao longo do trajeto, espalhados pela web, assim decidi criar um documento registrando minha jornada.
 
 ## Sumario 
 1. [API](#1---api)
 2. [ESLINT](#2---eslint)
+<<<<<<< HEAD
 3. [Azure](#3---azure)
 4. [Readme.md (Em breve)]
 5. [GIT (Em breve)]
@@ -44,6 +48,47 @@
 39. [BoomJs (Em breve)]
 40. [CORS (Em breve)]
 41. [Links (Em breve)]
+=======
+3. [Azure](#3-azure)
+4. [Readme.md](#readme)
+5. [GIT](#git)
+6. [Javascript](#javascript)
+7. [PHP](#php)
+8. [NodeJS](#nodejs)
+9. [React](#react)
+10. [React Native](#react-native)
+11. HTML5
+12. CSS3
+13. SASS
+14. Programação Funcional
+15. Pattern Strategy
+16. Pattern MVC
+17. Pattern Factory
+18. Pattern Sigleton
+19. Atomic Design
+20. Webpack
+21. Axios
+22. JWT
+23. DevOps
+24. Gulp
+25. PM2
+26. Mysql
+27. Postgree
+28. MongoDB
+29. Mongoose
+30. Sequelize
+31. Arquitetura de Software
+32. Modelagem de Dados
+33. SWAGGER
+34. HAPI
+35. Express
+36. Angular
+37. JSPOO
+38. Joi
+39. BoomJs
+40. CORS
+41. Links
+>>>>>>> d889f5fb2b55af558ebefeee30c91007b2d6cb53
 
 ## 1 - API 
 É um conjunto de rotinas e padrões de programação para acesso a um aplicativo baseado na Web.
