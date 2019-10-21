@@ -8,8 +8,8 @@
 > O que me motivou a criar este documento foi justamente encontrar a resposta para diversos problemas que eu tive ao longo do trajeto, espalhados pela web, assim decidi criar um documento registrando minha jornada.
 
 ## Sumario 
-1. [API](#1-api)
-2. [ESLINT](#2-eslint)
+1. [API](#1---api)
+2. [ESLINT](#2---eslint)
 3. [Azure](#3-azure)
 4. [Readme.md](#readme)
 5. [GIT](#git)
