@@ -1,13 +1,16 @@
 # Aprendizado
 > Este projeto é uma documentação do meu trajeto de aprendizado no mundo do desenvolvimento, abaixo está disponível todas as informações que pesquisei, estudei e testei ao longo de minha jornada no mundo da programação.
+>
 > Como foram muitos conteúdos lidos, resumidos e testados podem haver divergências nos conteúdos aqui descritos com o que talvez você conheça, assim peço a gentileza de me enviar sugestões de correções ou adição de conteúdo e texto.
+>
 > O objetivo deste projeto é poder ajudar outras pessoas que também estão no mundo da programação e precisam de algo um pouco mais detalhado e objetivo.
+>
 > O que me motivou a criar este documento foi justamente encontrar a resposta para diversos problemas que eu tive ao longo do trajeto, espalhados pela web, assim decidi criar um documento registrando minha jornada.
 
 ## Sumario 
-1. [API](#api)
-2. [ESLINT](#eslint)
-3. [Azure](#azure)
+1. [API](#1-api)
+2. [ESLINT](#2-eslint)
+3. [Azure](#3-azure)
 4. [Readme.md](#readme)
 5. [GIT](#git)
 6. [Javascript](#javascript)
