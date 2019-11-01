@@ -14,10 +14,10 @@
 4. [Readme.md (Em breve)]
 5. [GIT (Em breve)]
 6. [Javascript (Em breve)]
-7. [PHP (Em breve)]
+7. [PHP] (#7---php)
 8. [NodeJS (Em breve)]
-9. [React (Em breve)]
-10. [React Native (Em breve)]
+9. [React](#9---react)
+10. [React Native] (#10---react_native)
 11. [HTML5 (Em breve)]
 12. [CSS3 (Em breve)]
 13. [SASS (Em breve)]
@@ -40,13 +40,15 @@
 30. [Sequelize (Em breve)]
 33. [SWAGGER (Em breve)]
 34. [HAPI (Em breve)]
-35. [Express (Em breve)]
+35. [Express] (#35---express)
 36. [Angular (Em breve)]
 37. [JSPOO (Em breve)]
 38. [Joi (Em breve)]
 39. [BoomJs (Em breve)]
 40. [CORS (Em breve)]
-41. [Links (Em breve)]
+41. [AdonisJS] (#41---adonisjs)
+42. [PubNub](#41---PubNub)
+43. [Links](#42---links)
 
 ## 1 - API 
 É um conjunto de rotinas e padrões de programação para acesso a um aplicativo baseado na Web.
@@ -119,11 +121,233 @@ Existem diversas maneiras de fazer o deploy de uma aplicação para o AZURE vou 
 - No arquivo de inicialização: Manter o host como automático ou remove-lo da configuração e manter a porta como: process.env.PORT || [LOCAL_PORT]
 - O arquivo process.json faz parte da orquestracao do PM2 e pode ser opcional.
 
-## 5 - Links 
+## 7 - PHP
+
+## 9 - React
+Toda vez que for embutir javascript dentro do html pelo JSX precisa usar chaves sem aspas.
+
+A sintax **<>html</>** é chamada de fragment, permite criar as divs invisiveis para poder utilizar múltiplos componentes ou tags html dentro de um mesmo componente, essa técnica ajuda quando você não precisa aninhar diversas divs ou esta trabalhando com componentização (quando separa as camadas em componentes).
+
+Ao executar uma funcao de repeticao (map, forEach e etc) precisa inserir a propriedade [key] dentro do elemento html pai:
+ex: 
+```
+    <tr key='indice'>
+        map(func())
+    </tr>
+```
+Cada componente do React recebe como parametro um objeto chamado __props__, quando instalamos outras bibliotécas, alguns de seus métodos são acessados através deste parametro, como é o caso da bibliotéca __react-router-dom__, você pode usar a desestruturação para pegar apenas as propiedades que for usar, como exemplo:
+Para usar navegacao usamos o __history__ ou __location__, ambas propriedades da bibliotéca __react-router-dom__: 
+```
+    import React from 'react'
+    export default function App({history, location}){
+        console.log(history)
+        console.log(location)
+
+        return (<h1>Hello World!</h1>)
+    }
+```
+Alguns métodos do history:
+```
+    history.push('/uri'): Redireciona o usuário
+```
+Um stateless componente tem a seguinte sintax:
+```
+export default () => ( jsx )
+```
+
+### 9.1 Ferramentas:
+**State:**
+Para trabalhar com state react:
+```
+    import React, {useState} from 'react'
+    export default function App(){
+        const [var, setVar] = useState(valorInicial)
+
+        return (<h1>Hello World</h1>)
+    }
+```
+Funciona parecido com um get and set, o valor inicial pode ser um array vazio, uma string vazia, um valor boolean dentre outros.
+
+**Effect:**
+O useEffect é um método que pode executar blocos de códigos antes renderizar o componente, para seu uso considere:
+```
+    import React, {useEffect} from 'react'
+    export default function App(){
+        useEffect(function(){
+            console.log('Effect em funcionamento!')
+        },[])
+
+        return (<h1>Hello World!</h1>)
+    }
+```
+Ao declarar o useEffect com a dependencia vazia ele executa apenas uma vez, se você precisa que execute o mesmo bloco de código baseado em alguma dependencia, inserir esta no array de dependências.
+
+Sintax: useEffect(func(), [array de dependencias]), 
+
+**React Router Dom:**
+A biblioteca react-router-dom permite criar rotas dentro de uma aplicação React.
+O componente __Switch__ restring a executar apenas uma rota por vez, evitando assim que por acidente a aplicação tente renderizar 2 rotas ao mesmo tempo.
+
+A propriedade __exact__ dentro de __Route__ configura a rota para acessar apenas o valor da __uri__ exatamente igual ao definido em __path__
+
+### 10 - React Native
+Muitos dos conceitos utilizados no React JS você pode utilizar aqui no React Native.
+
+Aplicativos moveis usam o conceito de densidade de pixel, usar sempre 3 tamanhos de logo com quantidade de pixels diferentes superiores.
+
+Cada componente precisa ter estilizacao propria.
+
+Todas os componentes __View__ criadas ja possuem [display:'flex'] e [flexDirection:'column'] e todos os componentes de texto precisam ser estilizados.
+
+O React Native, diferentemente do React JS, não utiliza tags html ele é totalmente baseado em componentes, o estilo continua sendo css porém para definição dos estilos usa-se o componente __StyleSheet__ nativo do React Native, abaixo um exemplo:
+```
+    import {StyleSheet} from 'react-natvie'
+
+    const styles = StyleSheet.create({
+        className: {
+            ...styles
+        }
+    })    
+```
+**Obs:**
+As propriedades nao possuem hifens [-], diferentemente de arquivos.css, e os valores sao atribuidos usando aspas simples [''].
+Para usar os estilos precisa definir a propriedade __style__ dentro de cada componente:
+```
+    import React from 'react'
+    import {View, StyleSheet} from 'react-native'
+
+    export default function App(){
+
+        return (
+            <View style={styles.estilo}>
+                <Text>Hello World</Text>
+            </View>
+        )
+    }
+```
+Você também pode querer utilizar dois estilos dentro de um mesmo componente, para isto basta usar um array para chamar os estilos:
+```
+    import React from 'react'
+    import {View, StyleSheet} from 'react-native'
+
+    export default function App(){
+
+        return (
+            <View style={[styles.estilo1, styles.estilo2]}>
+                <Text>Hello World</Text>
+            </View>
+        )
+    }
+```
+
+### 10.1 Componentes
+* Text 
+    * Pode colocar texto:
+    ```
+        import React from 'react'
+        import {Text} from 'react-native'
+
+        export default function App(){
+
+            return (
+                <Text>Hello World</Text>            
+            )
+        }
+    ```
+* View:
+    * Container visual, funciona como se fosse uma div, você não pode adicionar textos sem usar o componente text:
+    ```
+        import React from 'react'
+        import {View, Text} from 'react-native'
+
+        export default function App(){
+
+            return (
+                <View>
+                    <Text>Hello World</Text>       
+                </View>            
+            )
+        }
+    ```
+* KeyboardAvoidingView:
+    * Usado para que a __View__ se desloque ao abrir o teclado, usado apenas para o IOS, no Android é uma ação padrão do sistema, ao declarar este componente precisa definir a propriedade behavior="padding", você pode também definir uma propriedade com condicional para habilitar este componente apenas em dispositivos com IOS:
+    ```
+        import React from 'react'
+        import {KeyboardAvoidingView} from 'react-native'
+
+        export default function App(){
+
+            return (
+                <KeyboardAvoidingView enabled={Platform.OS === 'ios'} behavior="padding" >
+                    <Text>Hello World</Text>       
+                </KeyboardAvoidingView>            
+            )
+        }
+    ```
+* AsyncStorage 
+    * Método que armazena dados direto no dispositivo, é asincrono, por tanto precisa utilizar async/await ou .then.catch ao utilizar:
+    ```
+        import React, {useEffect} from 'react'
+        import {AsyncStorage} from 'react-native'
+
+        export default function App(){
+            useEffect(()=>{
+                setItem()
+
+                AsyncStorage.getItem('user').then(resolve=>{
+                    console.log(resolve)
+                })
+            })
+
+            async function setItem(){
+                AsyncStorage.setItem('key', 'value')
+            }
+
+            return (
+                <View>
+                    <Text>Hello World</Text>       
+                </View>            
+            )
+        }
+    ```
+
+Para usar redirecionamento e navegacao usar o a propriedade do objeto { navigation } = navigation.navigate('NomeRota')
+- SafeAreaView
+  Cria uma box/view na parte segura de visualizacao dos dispositivo
+
+Para buscar itens e montar em forma de lista ou padrao de sequencia e bom criar um componente para isto
+Componentes que nao sao paginas nao tem acesso a propriedade [navigation] por padrao para contornar isto usar a lib [withNavigation] do [react-navigation] que adiciona a propriedade navigation a qualuqer componente que n seja pagina, basta envolver a funcao/componente no metodo [withNavigation(funcname)]
+
+Para usar dois estilos em um elemento usar array [style1, styleN]
+
+###### Erros Comuns:
+**Erro da extensão intl:** Este erro ocorreu comigo quando fui instalar o Codigniter 4, assim que iniciou a instalação apresentou o erro abaixo:
+
+```
+Problem 1
+    - codeigniter4/framework v4.0.0-rc.3 requires ext-intl * -> the requested PHP extension intl is missing from your system.
+    - codeigniter4/framework v4.0.0-rc.2.1 requires ext-intl * -> the requested PHP extension intl is missing from your system.
+    - codeigniter4/framework v4.0.0-rc.2 requires ext-intl * -> the requested PHP extension intl is missing from your system.
+    - codeigniter4/framework v4.0.0-rc.1 requires ext-intl * -> the requested PHP extension intl is missing from your system.
+    - Installation request for codeigniter4/framework ^4@rc -> satisfiable by codeigniter4/framework[v4.0.0-rc.1, v4.0.0-rc.2, v4.0.0-rc.2.1, v4.0.0-rc.3].
+
+  To enable extensions, verify that they are enabled in your .ini files:
+    - C:\xampp\php\php.ini
+  You can also run `php --ini` inside terminal to see which files are used by PHP in CLI mode.
+```
+
+**Solução:** Caso você esteja utilizando o XAMPP com a versão PHP 7, abra o php.ini e busque pelo trecho: extension=intl, caso esteja com ponto e virgula na frente (;extension=intl) remova, salve o arquivo e reinicie o servidor.
+
+
+## 41 - PubNub 
+
+## 42 - Links 
 1. https://blog.caelum.com.br/rest-principios-e-boas-praticas/
 2. https://github.com/mysqljs/mysql#introduction
 3. https://eslint.org/
 4. https://pt.stackoverflow.com/questions/86399/qual-a-diferen%C3%A7a-entre-endpoint-e-api
 5. https://www.devmedia.com.br/servicos-restful-verbos-http/37103
+6. https://www.pubnub.com/blog/realtime-geo-tracking-app-react-native/
 
 ###### Anotações em Geral
+Para testar se esta conseguindo acessar a porta usar o link: portquiz.net:30000[porta_desejada]
