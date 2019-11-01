@@ -190,7 +190,7 @@ O componente __Switch__ restring a executar apenas uma rota por vez, evitando as
 
 A propriedade __exact__ dentro de __Route__ configura a rota para acessar apenas o valor da __uri__ exatamente igual ao definido em __path__
 
-### 10 - React Native
+## 10 - React Native
 Muitos dos conceitos utilizados no React JS você pode utilizar aqui no React Native.
 
 Aplicativos moveis usam o conceito de densidade de pixel, usar sempre 3 tamanhos de logo com quantidade de pixels diferentes superiores.
