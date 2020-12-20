@@ -29,18 +29,18 @@
 * [Webpack (Em breve)]
 * [Axios (Em breve)]
 * [JWT (Em breve)]
-* [Vue](#--vue)
-  * [Lifecycle Hooks](#--lifecycle-hooks)
-  * [Transferência de dados entre componentes](#--transferência-de-dados-entre-componentes)
-* [Quasar](#--quasar)
-* [Laravel](#--laravel)
+* [Vue](#vue)
+  * [Lifecycle Hooks](#lifecycle-hooks)
+  * [Transferência de dados entre componentes](#transferência-de-dados-entre-componentes)
+* [Quasar](#quasar)
+* [Laravel](#laravel)
 * [Mysql (Em breve)]
-* [Node](#--node)
+* [Node](#node)
 * [MongoDB (Em breve)]
 * [Mongoose (Em breve)]
-* [Deno](#--Deno)
+* [Deno](#deno)
 * [CORS (Em breve)]
-* [Links](#---links)
+* [Links](#links)
 
 ## API 
 É um conjunto de rotinas e padrões de programação para acesso a um aplicativo baseado na Web.
