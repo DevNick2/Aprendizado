@@ -8,57 +8,57 @@
 > O que me motivou a criar este documento foi justamente encontrar a resposta para diversos problemas que eu tive ao longo do trajeto, espalhados pela web, assim decidi criar um documento registrando minha jornada.
 
 ## Sumario 
-1. [API](#1---api)
-2. [ESLINT](#2---eslint)
-3. [Azure](#3---azure)
-5. [GIT (Em breve)]
-6. [Javascript (Em breve)]
-7. [PHP] (#7---php)
-8. [NodeJS (Em breve)]
-9. [React](#9---react)
-10. [React Native](#10---react_native)
-11. [HTML5 (Em breve)]
-12. [CSS3 (Em breve)]
-13. [SASS (Em breve)]
-14. [Programação Funcional (Em breve)]
-15. [Pattern Strategy (Em breve)]
-16. [Pattern MVC (Em breve)]
-17. [Pattern Factory (Em breve)]
-18. [Pattern Sigleton (Em breve)]
-19. [Atomic Design (Em breve)]
-20. [Webpack (Em breve)]
-21. [Axios (Em breve)]
-22. [JWT (Em breve)]
-23. [Vue](#23--vue)
-23.1 [Lifecycle Hooks](#23--lifecycle_hooks)
-23.2 [Transferência de dados entre componentes](#23.2--transferência_de_dados_entre_componentes)
-24. [Quasar](#24--quasar)
-25. [Laravel](#25--laravel)
-26. [Mysql (Em breve)]
-27. [Node](#27--node)
-28. [MongoDB (Em breve)]
-29. [Mongoose (Em breve)]
-30. [Deno](#30--Deno)
-40. [CORS (Em breve)]
-43. [Links](#42---links)
+* [API](#--api)
+* [ESLINT](#--eslint)
+* [Azure](#--azure)
+* [GIT (Em breve)]
+* [Javascript (Em breve)]
+* [PHP](#--php)
+* [NodeJS (Em breve)]
+* [React](#--react)
+* [React Native](#--react-native)
+* [HTML5 (Em breve)]
+* [CSS3 (Em breve)]
+* [SASS (Em breve)]
+* [Programação Funcional (Em breve)]
+* [Pattern Strategy (Em breve)]
+* [Pattern MVC (Em breve)]
+* [Pattern Factory (Em breve)]
+* [Pattern Sigleton (Em breve)]
+* [Atomic Design (Em breve)]
+* [Webpack (Em breve)]
+* [Axios (Em breve)]
+* [JWT (Em breve)]
+* [Vue](#--vue)
+  * [Lifecycle Hooks](#--lifecycle-hooks)
+  * [Transferência de dados entre componentes](#--transferência-de-dados-entre-componentes)
+* [Quasar](#--quasar)
+* [Laravel](#--laravel)
+* [Mysql (Em breve)]
+* [Node](#--node)
+* [MongoDB (Em breve)]
+* [Mongoose (Em breve)]
+* [Deno](#--Deno)
+* [CORS (Em breve)]
+* [Links](#---links)
 
-## 1 - API 
+## API 
 É um conjunto de rotinas e padrões de programação para acesso a um aplicativo baseado na Web.
 
 Responsavel por estabelecer a comunicação entre diferentes serviços, assim pode-se criar e comunicar com várias outras aplicações  sem a necessidade principal de construir novas API's ou novas estruturas de back-end.
 
 **Endpoint:** O conceito de ENDPOINT dentro de Web Services é a URL onde seu serviço pode ser acessado por uma aplicação cliente, em outros casos pode ser considerado como **algo que está nas pontas**, como no caso do par de cada ponta da conexão TCP.
 
-### 1.2 - REST -> REpresentational State Transfer(Transferencia de Estado Representativo)
+### REST -> REpresentational State Transfer(Transferencia de Estado Representativo)
 A transferencia de dados é feita de uma maneira **simbólica**, **figurativa**, **representativa**, de maneira didática.
 A transferencia de dados é geralmente usando protocolo **HTTP**.
 
 **Resource:** É a abstração sobre um determinado tipo de informação que uma aplicação gerencia, para que se aplique ao padrão REST __cada recurso precisa ter uma identificação única__ exemplo: __http://URI/RESOURCE_NAME/INFO__
 
-### 1.3 - RESTFul
+### RESTFul
 É a aplicação de todos os padrões REST na API.
 
-### 1.4 - Padrões para ser RESTFul 
+### Padrões para ser RESTFul 
 
 - Cliente separado do Servidor: Separação do cliente e do servidor, dessa forma, podemos ter uma portabilidade do sistema;
 - Stateless (Sem estado): Cada requisição que o cliente faz para o servidor, deverá conter todas as informações necessárias para o servidor entender e responder a requisição, Exemplo: a sessao do usuario devera ser enviada em todas as requisições para saber se aquele usuario esta autenticado e apto a usar os serviços, o servidor não pode armazenar que o cliente foi autenticado antes;
@@ -67,7 +67,7 @@ A transferencia de dados é geralmente usando protocolo **HTTP**.
 - Code on Demand (Opcional): Da a possibilidade da nossa aplicação pegar codigos como javascript no lado do cliente;
 - Uniform Interface (Interfacec uniforme): Manter o padrão na construção da API, consistente, constante, padrão ou coerente.
 
-### 1.5 Verbos HTTP
+### Verbos HTTP
 Existem diversos porém os mais utilizados são:
 - GET: Buscar dados, pode ser usado com parâmetros;
 - POST: Enviar dados ou informações para serem processadas, utiliza-se de um corpo (body);
@@ -75,14 +75,14 @@ Existem diversos porém os mais utilizados são:
 - PATCH: Usado para editar o recurso sem a necessidade de enviar todos os atributos, com um parâmetro de indicação obrigatório;
 - DELETE: Deletar, remover ou apagar dados, com um parâmetro de identificação obrigatório.
 
-### 1.6 Boas Práticas na criação de API's
+### Boas Práticas na criação de API's
 - Utlizar verbos HTTP adequados para as requisições;
 - Não utilizar barras no final da recursos;
 - Use o mesmo padrão de URI na identificação dos recursos;
 - Nunca deixe o cliente sem resposta;
 - Na construcao da chave secreta do token usar o mesmo numero de bits do token.
 
-### 1.7 Status das respostas
+### Status das respostas
 - 1xx: Informação
 - 2xx: Sucesso
     - 200: OK
@@ -95,13 +95,13 @@ Existem diversos porém os mais utilizados são:
 - 5xx: Server Error
     - 500: Internal Server Error
 
-## 2 - ESLINT  
+## ESLINT  
 Comandos úteis:
 - eslint --init: Inicia uma configuração, respondendo as perguntas, ao finalizar gera um arquivo .eslintrc||.json||.js||.yaml
 - eslint [file.js]: Efetua a verificação do arquivo e mostra um log com os erros no formato [line]:[column] error [message]
 - eslint --fix [file.js]: Executa a correção dos erros que forem encontrados
 
-## 3 - Azure 
+## Azure 
 Armazenar informações uteis acerca da utilização do AZURE e de como construir e fazer o deploy de uma API.
 
 ### 3.1 Estrutura base para a API for Azure (AFA - API For Azure)
@@ -113,9 +113,9 @@ Existem diversas maneiras de fazer o deploy de uma aplicação para o AZURE vou 
 - No arquivo de inicialização: Manter o host como automático ou remove-lo da configuração e manter a porta como: process.env.PORT || [LOCAL_PORT]
 - O arquivo process.json faz parte da orquestracao do PM2 e pode ser opcional.
 
-## 7 - PHP
+## PHP
 
-## 9 - React
+## React
 Toda vez que for embutir javascript dentro do html pelo JSX precisa usar chaves sem aspas.
 
 A sintax **<>html</>** é chamada de fragment, permite criar as divs invisiveis para poder utilizar múltiplos componentes ou tags html dentro de um mesmo componente, essa técnica ajuda quando você não precisa aninhar diversas divs ou esta trabalhando com componentização (quando separa as camadas em componentes).
@@ -182,7 +182,7 @@ O componente __Switch__ restring a executar apenas uma rota por vez, evitando as
 
 A propriedade __exact__ dentro de __Route__ configura a rota para acessar apenas o valor da __uri__ exatamente igual ao definido em __path__
 
-## 10 - React Native
+## React Native
 Muitos dos conceitos utilizados no React JS você pode utilizar aqui no React Native.
 
 Aplicativos moveis usam o conceito de densidade de pixel, usar sempre 3 tamanhos de logo com quantidade de pixels diferentes superiores.
@@ -330,7 +330,7 @@ Problem 1
 
 **Solução:** Caso você esteja utilizando o XAMPP com a versão PHP 7, abra o php.ini e busque pelo trecho: extension=intl, caso esteja com ponto e virgula na frente (;extension=intl) remova, salve o arquivo e reinicie o servidor.
 
-## 23 - Vue Js
+## Vue
 >Vue (pronuncia-se /vjuː/, como view, em inglês) é um framework progressivo para a construção de interfaces de usuário. Ao contrário de outros frameworks monolíticos, Vue foi projetado desde sua concepção para ser adotável incrementalmente. A biblioteca principal é focada exclusivamente na camada visual (view layer), sendo fácil adotar e integrar com outras bibliotecas ou projetos existentes. Por outro lado, Vue também é perfeitamente capaz de dar poder a sofisticadas Single-Page Applications quando usado em conjunto com ferramentas modernas e bibliotecas de apoio. fonte: https://br.vuejs.org/v2/guide/index.html
 
 Atualmente em sua versão 3 novas ferramentas foram surgindo para facilitar o desenvolvimento.
@@ -374,7 +374,7 @@ Também funciona para os atributos de função (v-on), podem ser usados o arroba
 ```
     <div @component-function="method"></div>
 ```
-### 23.1 Lifecycle Hooks
+### Lifecycle Hooks
 O Vue js possui hooks de ciclo de vida dos componentes assim como os outros frameworks, todos os hooks do Vue tem acesso a variavel **this** e por tanto não podem ser usados com _arrow functions_:
 
  - **beforeCreate**: Chamado imediatamente após instanciar o vue, não tem acesso a _computed properties_, _watchers_, _data_ e _methods_
@@ -393,7 +393,7 @@ O Vue js possui hooks de ciclo de vida dos componentes assim como os outros fram
  <!-- XXX TODO :: Sessão dos testes e QA -->
  <!-- XXX TODO :: Sessão do Vue 3 -->
 
-### 23.2 Transferência de dados entre componentes:
+### Transferência de dados entre componentes:
 Para transferir dados entre componentes uso muito as props via atributos html com bind do vue a diretiva **v-on** (https://br.vuejs.org/v2/api/#v-on) e a função **$emit** dos métodos da instância (https://br.vuejs.org/v2/api/#vm-emit):
 
 *componentePai.vue*
@@ -443,7 +443,7 @@ Para transferir dados entre componentes uso muito as props via atributos html co
 ```
 Assim você podem manter a reatividade das propriedades e a comunicação entre os componentes.
 
-## 42 - Links 
+## Links 
 1. https://blog.caelum.com.br/rest-principios-e-boas-praticas/
 2. https://github.com/mysqljs/mysql#introduction
 3. https://eslint.org/
