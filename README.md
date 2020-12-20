@@ -11,13 +11,12 @@
 1. [API](#1---api)
 2. [ESLINT](#2---eslint)
 3. [Azure](#3---azure)
-4. [Readme.md (Em breve)]
 5. [GIT (Em breve)]
 6. [Javascript (Em breve)]
 7. [PHP] (#7---php)
 8. [NodeJS (Em breve)]
 9. [React](#9---react)
-10. [React Native] (#10---react_native)
+10. [React Native](#10---react_native)
 11. [HTML5 (Em breve)]
 12. [CSS3 (Em breve)]
 13. [SASS (Em breve)]
@@ -30,24 +29,17 @@
 20. [Webpack (Em breve)]
 21. [Axios (Em breve)]
 22. [JWT (Em breve)]
-23. [DevOps (Em breve)]
-24. [Gulp (Em breve)]
-25. [PM2 (Em breve)]
+23. [Vue](#23--vue)
+23.1 [Lifecycle Hooks](#23--lifecycle_hooks)
+23.2 [Transferência de dados entre componentes](#23.2--transferência_de_dados_entre_componentes)
+24. [Quasar](#24--quasar)
+25. [Laravel](#25--laravel)
 26. [Mysql (Em breve)]
-27. [Postgree (Em breve)]
+27. [Node](#27--node)
 28. [MongoDB (Em breve)]
 29. [Mongoose (Em breve)]
-30. [Sequelize (Em breve)]
-33. [SWAGGER (Em breve)]
-34. [HAPI (Em breve)]
-35. [Express] (#35---express)
-36. [Angular (Em breve)]
-37. [JSPOO (Em breve)]
-38. [Joi (Em breve)]
-39. [BoomJs (Em breve)]
+30. [Deno](#30--Deno)
 40. [CORS (Em breve)]
-41. [AdonisJS] (#41---adonisjs)
-42. [PubNub](#41---PubNub)
 43. [Links](#42---links)
 
 ## 1 - API 
@@ -338,8 +330,118 @@ Problem 1
 
 **Solução:** Caso você esteja utilizando o XAMPP com a versão PHP 7, abra o php.ini e busque pelo trecho: extension=intl, caso esteja com ponto e virgula na frente (;extension=intl) remova, salve o arquivo e reinicie o servidor.
 
+## 23 - Vue Js
+>Vue (pronuncia-se /vjuː/, como view, em inglês) é um framework progressivo para a construção de interfaces de usuário. Ao contrário de outros frameworks monolíticos, Vue foi projetado desde sua concepção para ser adotável incrementalmente. A biblioteca principal é focada exclusivamente na camada visual (view layer), sendo fácil adotar e integrar com outras bibliotecas ou projetos existentes. Por outro lado, Vue também é perfeitamente capaz de dar poder a sofisticadas Single-Page Applications quando usado em conjunto com ferramentas modernas e bibliotecas de apoio. fonte: https://br.vuejs.org/v2/guide/index.html
 
-## 41 - PubNub 
+Atualmente em sua versão 3 novas ferramentas foram surgindo para facilitar o desenvolvimento.
+
+Algumas curiosidades: 
+Na versão 2 ou anterior não é considerado uma boa prática usar o v-if junto de um bloco v-for:
+
+**Bad**
+```
+    <div v-if="items.length" v-for="(item, i) in items">
+        {{ item }}
+    </div>
+```
+**Good**
+```
+    <div v-if="items.length">
+        <div v-for="(item, i) in items">
+            {{ item }}
+        </div>
+    </div>
+```
+O atributo HTML v-show é diferente do v-if, o v-if não registra o elemento html caso seja false, ou seja, não aparece no DOM enquanto o v-show apenas esconde, um tipico uso do v-show é na amostragem do menu sidebar.
+
+Os atributos binds do Vue podem ser abreveados com os dois pontos (:), exemplo:
+
+**Original**
+```
+    <div v-bind:attribute-name="value"></div>
+```
+**Abreviado**
+```
+    <div :attribute-name="value"></div>
+```
+
+Também funciona para os atributos de função (v-on), podem ser usados o arroba (@):
+**Original**
+```
+    <div v-on:component-function="method"></div>
+```
+**Abreviado**
+```
+    <div @component-function="method"></div>
+```
+### 23.1 Lifecycle Hooks
+O Vue js possui hooks de ciclo de vida dos componentes assim como os outros frameworks, todos os hooks do Vue tem acesso a variavel **this** e por tanto não podem ser usados com _arrow functions_:
+
+ - **beforeCreate**: Chamado imediatamente após instanciar o vue, não tem acesso a _computed properties_, _watchers_, _data_ e _methods_
+ - **created**: Foi configurado: _observer data_, _computed properties_, _methods_, _watch/event callbacks_, ainda não tem acesso ao _DOM_ nem a propriedade **$el**.
+ - **beforeMount**: A função _render_ está prestes a ser invocada pela primeira vez.
+ - **mounted**: Invocado logo após a instância ter sido montada, onde **el** é substituído pelo recém criado **vm.$el**. Se a instância raiz é montada em um elemento já presente no documento, **vm.$el** também estará presente no documento quando mounted for invocada. Observe que o **mounted** não garante que todos os **componentes filhos** também já tenham sido montados. Se você quiser esperar até que toda a camada view do componente em questão tiver sido renderizada, você pode utilizar **vm.$nextTick** dentro do mounted.
+ - **beforeUpdate**: Invocado quando os dados mudam, antes do virtual _DOM_ ser re-renderizado e atualizado. Este é um bom local para acessar DOM existente antes de uma atualização, por exemplo, para remover escutas de eventos adicionadas manualmente.
+ - **updated**: Invocado após a mudança de dados fazer o virtual _DOM_ ser re-renderizado e atualizado. O _DOM_ do componente estará no estado updated quando este gatilho for invocado, assim você pode realizar operações dependentes de _DOM_ neste gatilho. Entretanto, na maioria dos casos você deveria evitar mudar o estado deste gatilho, melhor utilizar propriedades computadas ou observadores. Observe que o updated não garante que todos os componentes filhos também já tenham sido montados. Se você quiser esperar até que toda a camada view do componente em questão tiver sido renderizada, você pode utilizar **vm.$nextTick** dentro do **updated**.
+ - **beforeDestroy**: Invocado logo antes da instância Vue ser destruída. Neste ponto a instância ainda é completamente funcional.
+ - **destroy**: Invocado após a instância Vue ter sido destruída. Quando este gatilho é invocado, todas as diretivas da instância Vue já foram desvinculadas, todos os event listeners foram removidos, e todas as instâncias Vue filhas também foram destruídas.
+
+ <!-- XXX TODO :: Sessão dos watchers e computed properties -->
+ <!-- XXX TODO :: Sessão do v-model -->
+ <!-- XXX TODO :: Sessão das diretivas -->
+ <!-- XXX TODO :: Sessão do Vuex -->
+ <!-- XXX TODO :: Sessão dos testes e QA -->
+ <!-- XXX TODO :: Sessão do Vue 3 -->
+
+### 23.2 Transferência de dados entre componentes:
+Para transferir dados entre componentes uso muito as props via atributos html com bind do vue a diretiva **v-on** (https://br.vuejs.org/v2/api/#v-on) e a função **$emit** dos métodos da instância (https://br.vuejs.org/v2/api/#vm-emit):
+
+*componentePai.vue*
+```
+    <template>
+        <h6>Bem vindo {{ name }}</h6>
+        <componente-filho :prop1="msg" @input="onGetName"/>
+    </template>
+
+    <script>
+    import componenteFilho from './componenteFilho'
+    export default {
+        components: {
+            componenteFilho
+        },
+        data: () => ({
+            name: '',
+            msg: 'Estamos felizes em ver você!'
+        }),
+        methods: {
+            onGetName (name) {
+                this.name = name 
+            }
+        }
+    }
+    </script>
+
+```
+*componenteFilho.vue*
+```
+    <template>
+        <p>{{ prop1 }}</p>
+        <button @click="onSendName">Envie seu nome</button>
+    </template>
+
+    <script>
+
+    export default {
+        props: ['prop1'],
+        methods: {
+            onSendName () {
+                this.$emit('input', 'Um Nome Qualquer')
+            }
+        }
+    </script>
+
+```
+Assim você podem manter a reatividade das propriedades e a comunicação entre os componentes.
 
 ## 42 - Links 
 1. https://blog.caelum.com.br/rest-principios-e-boas-praticas/
