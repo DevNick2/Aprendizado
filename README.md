@@ -8,15 +8,15 @@
 > O que me motivou a criar este documento foi justamente encontrar a resposta para diversos problemas que eu tive ao longo do trajeto, espalhados pela web, assim decidi criar um documento registrando minha jornada.
 
 ## Sumario 
-* [API](#--api)
-* [ESLINT](#--eslint)
-* [Azure](#--azure)
+* [API](#api)
+* [ESLINT](#eslint)
+* [Azure](#azure)
 * [GIT (Em breve)]
 * [Javascript (Em breve)]
-* [PHP](#--php)
+* [PHP](#php)
 * [NodeJS (Em breve)]
-* [React](#--react)
-* [React Native](#--react-native)
+* [React](#react)
+* [React Native](#react-native)
 * [HTML5 (Em breve)]
 * [CSS3 (Em breve)]
 * [SASS (Em breve)]
