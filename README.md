@@ -12,7 +12,7 @@
 * [ESLINT](#eslint)
 * [Azure](#azure)
 * [GIT (Em breve)]
-* [Javascript (Em breve)]
+* [Javascript](#javascript)
 * [PHP](#php)
 * [NodeJS (Em breve)]
 * [React](#react)
@@ -442,6 +442,154 @@ Para transferir dados entre componentes uso muito as props via atributos html co
 
 ```
 Assim você podem manter a reatividade das propriedades e a comunicação entre os componentes.
+
+### Usando a diretiva v-slot
+Os Slots do Vue são uma excelente forma de reaproveitar componentes ao longo do projeto, desta forma é possível fazer com que um componente tenha vários comportamentos dentro de um mesmo objetivo, mas atenção as boas práticas de construção de componentes para que não acumule responsabilidades demais a um unico componente, abaixo um exemplo de uso da diretiva v-slot do vue:
+
+Um exemplo ilustrado de como reaproveitar um componente que envolve renderizar botões:
+```
+//App.vue
+
+<template>
+  <div id="app">
+  <button-helper>
+    <h1 slot="title">Lista de botões</h1>
+    <button slot="red" type="button" class="Red">Red</button>
+    <button slot="green" type="button" class="Green">Green</button>
+    <button slot="blue" type="button" class="Blue">Blue</button>
+  </button-helper>
+  </div>
+</template>
+<script>
+import buttonHelper from './components/Buttons.vue'
+export default {
+  name: 'App',
+  components: {
+    'button-helper':buttonHelper
+  }
+    }
+</script>
+
+<style>
+.Red{
+  width:120px;
+  height: 50px;
+  margin: 50px;
+  padding: 10px;
+  background-color:red;
+  text-align: center;
+  cursor:pointer;
+}
+.Green{
+  width:120px;
+  height: 50px;
+  margin: 50px;
+  padding: 10px;
+  background-color:Green;
+  text-align: center;
+  cursor:pointer;
+}
+.Blue{
+  width:120px;
+  height: 50px;
+  margin: 50px;
+  padding: 10px;
+  background-color:blue;
+  text-align: center;
+  cursor:pointer;
+}
+</style>
+```
+```
+//Buttons.vue
+<template>
+<div>
+  <h1>Esta é a lista de botoes do App.vue</h1>
+<div>
+  <slot name="title"></slot>
+  <slot name="green"></slot>
+</div>
+<div>
+  <slot name="title"></slot>
+  <slot name="blue"></slot>
+</div>
+<div>
+  <slot name="title"></slot>
+  <slot name="red"></slot>
+  </div>
+<div>
+  <slot name="title"></slot>
+  <slot name="blue"></slot>
+  <slot name="red"></slot>
+  <slot name="green"></slot>
+</div>
+</div>
+</template>
+<script>
+export default {
+  name: 'Buttons',
+    }
+</script>
+```
+
+O exemplo acima vai renderizar um botão de cada cor na ordem (Verde, Azul e Vermelho) cada um com o titulo 'Lista de botões' muito parecido com o comportamento de um v-for.
+
+
+
+## Javascript
+Nesta seção vou abordar assuntos sobre o Javascript, Typescript e Ecmascript
+
+
+### Operador de coalescência nula (Nullish Coalescing Operator :: ES11(2020))
+Antes do lançamento do ES11 tinhamos apenas o operador lógico OR (||) que no exemplo: 
+```
+    const var1 = 1
+    const var2 = 2
+
+    console.log(var1 || var 2) // return var1
+
+    const var3 = null
+    const var4 = 2
+
+    console.log(var3 || var 4) // return var4
+```
+
+Returna o valor cuja expressão retorne verdadeiro.
+
+Mas em alguns casos queremos que a próxima expressão seja avaliada apenas quando a primeira for null ou undefined:
+
+```
+let result = undefined ?? "Hello";
+console.log(result); // Hello
+
+result = null ?? true; 
+console.log(result); // true
+
+result = false ?? true;
+console.log(result); // false
+
+result = 45 ?? true; 
+console.log(result); // 45
+
+result = "" ?? true; 
+console.log(result); // ""
+
+result = NaN ?? true; 
+console.log(result); // NaN
+
+result = 4 > 5 ?? true; 
+console.log(result); // false because 4 > 5 evaluates to false
+
+result = 4 < 5 ?? true;
+console.log(result); // true because 4 < 5 evaluates to true
+
+result = [1, 2, 3] ?? true;
+console.log(result); // [1, 2, 3]
+
+```
+E isto é feito com o novo operador de coalescência nula, apenas avalia a próxima expressão quando a primeira for null ou undefined.
+
+>fonte: https://www.freecodecamp.org/news/nullish-coalescing-operator-in-javascript/
 
 ## Links 
 1. https://blog.caelum.com.br/rest-principios-e-boas-praticas/
